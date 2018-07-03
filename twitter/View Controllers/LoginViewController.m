@@ -10,6 +10,7 @@
 #import "APIManager.h"
 
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @end
 
@@ -18,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.loginButton.layer.cornerRadius = 30;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,6 +33,7 @@
             [self performSegueWithIdentifier:@"loginSegue" sender:nil];
         } else {
             NSLog(@"%@", error.localizedDescription);
+            NSLog(@"STAHHHHPPP");
         }
     }];
 }

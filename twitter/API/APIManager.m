@@ -7,9 +7,10 @@
 //
 
 #import "APIManager.h"
+#import "Tweet.h"
 
 static NSString * const baseURLString = @"https://api.twitter.com";
-static NSString * const consumerKey = @"60e1d3f9485ce67b2f7c2f12b424a95dU809QqUfHK8skbvy9vz6ECJ60"; // Enter your consumer key here
+static NSString * const consumerKey = @"U809QqUfHK8skbvy9vz6ECJ60"; // Enter your consumer key here
 static NSString * const consumerSecret = @"axTkGtAuyDjoVnE4DxLVgyKdMnPuvauqt7daJqu6YYU7hjPJLh"; // Enter your consumer secret here
 
 @interface APIManager()
@@ -59,19 +60,40 @@ static NSString * const consumerSecret = @"axTkGtAuyDjoVnE4DxLVgyKdMnPuvauqt7daJ
 
 - (void)getHomeTimelineWithCompletion:(void(^)(NSArray *tweets, NSError *error))completion {
     
-    [self GET:@"1.1/statuses/home_timeline.json"
-   parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray *  _Nullable tweetDictionaries) {
-       
-       // Cache it
-       NSData *data = [NSKeyedArchiver archivedDataWithRootObject:tweetDictionaries];
-       [[NSUserDefaults standardUserDefaults] setValue:data forKey:@"hometimeline_tweets"];
-
-       if (completion) { completion(tweetDictionaries, nil); }
-       
-   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-       
-       if (completion) { completion(nil, error); }
-   }];
+    [self GET:@"1.1/statuses/home_timeline.json" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray *  _Nullable tweetDictionaries) {
+        
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:tweetDictionaries];
+        [[NSUserDefaults standardUserDefaults] setValue:data forKey:@"hometimeline_tweets"];
+        
+        //success
+        NSMutableArray * tweets = [Tweet tweetsWithArray:tweetDictionaries];
+        completion(tweets, nil);
+   }
+      failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+          //failure
+          NSArray *tweetDictionaries = nil;
+          completion(nil, error);
+          NSData *data = [[NSUserDefaults standardUserDefaults] valueForKey:@"hometimeline_tweets"];
+          if(data != nil)
+          {
+              tweetDictionaries = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+          }
+          completion(nil, error);
+      }];
 }
+     
+        
+       
+//       // Cache it
+//       NSData *data = [NSKeyedArchiver archivedDataWithRootObject:tweetDictionaries];
+//       [[NSUserDefaults standardUserDefaults] setValue:data forKey:@"hometimeline_tweets"];
+//
+//       if (completion) { completion(tweetDictionaries, nil); }
+//
+//   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//
+//       if (completion) { completion(nil, error); }
+//   }];
+//}
 
 @end
