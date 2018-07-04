@@ -11,6 +11,7 @@
 
 @interface Tweet : NSObject
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 // MARK: Properties
 

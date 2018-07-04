@@ -6,6 +6,7 @@
 //
 
 #import "ComposeViewController.h"
+#import "APIManager.h"
 
 @interface ComposeViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *tweetTextView;
@@ -16,12 +17,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
+
 - (IBAction)onTapClose:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }
 - (IBAction)onTapTweet:(id)sender {
+    [[APIManager shared] postStatusWithText:(self.tweetTextView.text) completion:^(Tweet *tweet, NSError *error)  {
+        if (tweet) {
+            [self dismissViewControllerAnimated:true completion:nil];
+        } else {
+            NSLog(@"😫😫😫 Error posting tweet: %@", error.localizedDescription);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
