@@ -40,7 +40,8 @@
     self.user = tweet.user;
     self.idStr = tweet.idStr;
     self.tweetText.text = tweet.text;
-    self.screenName.text = tweet.user.screenName;
+    NSString *theAt = @"@";
+    self.screenName.text = [theAt stringByAppendingString: tweet.user.screenName];
     self.name.text = tweet.user.name;
     self.favoriteLabel.text = [NSString stringWithFormat:@"%d", tweet.favoriteCount];
     [self.profilePic setImageWithURL: self.tweet.user.profilePic];
@@ -62,7 +63,8 @@
 //    }
     self.retweetLabel.text =[NSString stringWithFormat:@"%d", tweet.retweetCount];
     self.commentImage.image = [UIImage imageNamed:@"commentImage"];
-    self.createdAtString.text = tweet.createdAtString;
+    NSString *middot = @"· ";
+    self.createdAtString.text = [middot stringByAppendingString: tweet.createdAtString];
     NSLog(@"%@", tweet.createdAtString);
 }
 @end
