@@ -9,11 +9,12 @@
 #import "TimelineViewController.h"
 #import "APIManager.h"
 #import "TweetCell.h"
+#import "ComposeViewController.h"
 
 @interface TimelineViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray *tweets;
+@property (strong, nonatomic) NSMutableArray *tweets;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *logoutButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *composeTweetButton;
 - (void) makeCallToAPI:(UIRefreshControl *)refreshControl;
@@ -60,21 +61,29 @@
     [refreshControl endRefreshing];
 }
 
+- (void)didTweet:(Tweet *)tweet {
+    [self.tweets addObject:tweet];
+    [self.tableView reloadData];
+    [self dismissViewControllerAnimated:true completion:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UINavigationController *navigationController = [segue destinationViewController];
+    ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+    composeController.delegate = self;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
