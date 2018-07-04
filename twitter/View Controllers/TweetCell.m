@@ -29,6 +29,7 @@
     self.tweet.favorited = YES;
     self.tweet.favoriteCount += 1;
     // TODO: Update cell UI
+    // refreshCell()
     // TODO: Send a POST request to the POST favorites/create endpoint
 }
 

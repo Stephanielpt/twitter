@@ -62,8 +62,13 @@
 
 - (void)didTweet:(Tweet *)tweet {
     NSLog(@"hitt");
-    [self.tweets addObject:tweet];
+    [self.tweets insertObject:tweet atIndex:0];
+    //[self.tweets addObject:tweet];
     NSLog(@"%@", _tweets);
+//    NSLog(@"%lu", (unsigned long)_tweets.count);
+//    - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//        return self.tweets.count;
+//    }
     [self.tableView reloadData];
     [self dismissViewControllerAnimated:true completion:nil];
 }
@@ -88,6 +93,7 @@
 
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"bruh");
     return self.tweets.count;
 }
 
