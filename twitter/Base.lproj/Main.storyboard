@@ -145,6 +145,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="notFavorited"/>
                                                     <state key="selected" image="favorited"/>
+                                                    <connections>
+                                                        <action selector="didTapFavorite:" destination="4dH-Dw-NO4" eventType="touchUpInside" id="01F-5t-zjY"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWx-oZ-Pc1">
                                                     <rect key="frame" x="130" y="117" width="32" height="30"/>

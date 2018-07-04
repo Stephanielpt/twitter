@@ -35,17 +35,16 @@
     
     // Get timeline
     [self makeCallToAPI:refreshControl];
-    
+    [self.tableView reloadData];
 }
 
 // Makes a network request to get updated data
 // Updates the tableView with the new data
 // Hides the RefreshControl
 - (void)makeCallToAPI:(UIRefreshControl *)refreshControl {
-    [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
+    [[APIManager shared] getHomeTimelineWithCompletion:^(NSMutableArray *tweets, NSError *error) {
         if (tweets) {
             self.tweets = tweets;
-            //[Tweet tweetsWithArray:tweets];
             NSLog(@"😎😎😎 Successfully loaded home timeline");
             for (Tweet *tweet in tweets) {
                 NSString *text = tweet.text;
@@ -62,7 +61,9 @@
 }
 
 - (void)didTweet:(Tweet *)tweet {
+    NSLog(@"hitt");
     [self.tweets addObject:tweet];
+    NSLog(@"%@", _tweets);
     [self.tableView reloadData];
     [self dismissViewControllerAnimated:true completion:nil];
 }

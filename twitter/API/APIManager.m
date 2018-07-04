@@ -58,9 +58,9 @@ static NSString * const consumerSecret = @"axTkGtAuyDjoVnE4DxLVgyKdMnPuvauqt7daJ
 //    [[NSNotificationCenter defaultCenter] postNotificationName:@"didLogout" object:nil];
 //}
 
-- (void)getHomeTimelineWithCompletion:(void(^)(NSArray *tweets, NSError *error))completion {
+- (void)getHomeTimelineWithCompletion:(void(^)(NSMutableArray *tweets, NSError *error))completion {
     
-    [self GET:@"1.1/statuses/home_timeline.json" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray *  _Nullable tweetDictionaries) {
+    [self GET:@"1.1/statuses/home_timeline.json" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSMutableArray *  _Nullable tweetDictionaries) {
         
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:tweetDictionaries];
         [[NSUserDefaults standardUserDefaults] setValue:data forKey:@"hometimeline_tweets"];
@@ -71,7 +71,7 @@ static NSString * const consumerSecret = @"axTkGtAuyDjoVnE4DxLVgyKdMnPuvauqt7daJ
    }
       failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
           //failure
-          NSArray *tweetDictionaries = nil;
+          NSMutableArray *tweetDictionaries = nil;
           completion(nil, error);
           NSData *data = [[NSUserDefaults standardUserDefaults] valueForKey:@"hometimeline_tweets"];
           if(data != nil)
