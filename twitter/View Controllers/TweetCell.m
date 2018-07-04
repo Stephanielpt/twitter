@@ -44,7 +44,7 @@
     self.name.text = tweet.user.name;
     self.favoriteLabel.text = [NSString stringWithFormat:@"%d", tweet.favoriteCount];
     [self.profilePic setImageWithURL: self.tweet.user.profilePic];
-    self.profilePic.layer.cornerRadius = 50;
+    self.profilePic.layer.cornerRadius = 25;
 //    if(self.retweeted)
 //    {
 //        self.retweetImage.image = [UIImage imageNamed:@"retweeted"];

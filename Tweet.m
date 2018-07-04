@@ -14,23 +14,6 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self) {
-        // FROM HERE
-//        // Is this a re-tweet?
-////        NSDictionary *originalTweet = dictionary[@"retweeted_status"];
-//        NSDictionary *originalTweet = dictionary;
-//        NSLog(@"%@", originalTweet);
-//        if(originalTweet != nil) {
-//
-////           NSDictionary *userDictionary = dictionary[@"user"];
-////            self.retweetedByUser = [[User alloc] initWithDictionary:userDictionary];
-//
-//            // Change tweet to original tweet
-//            dictionary = originalTweet;
-//        }
-        // TO HERE WORKED FOR 20
-        
-        /* THIS IS FROM THE SOURCE */
-        // Is this a re-tweet?
         NSDictionary *originalTweet = dictionary[@"retweeted_status"];
         if(originalTweet != nil){
             NSDictionary *userDictionary = dictionary[@"user"];
@@ -39,22 +22,6 @@
             // Change tweet to original tweet
             dictionary = originalTweet;
         }
-        /*
-        // Is this a re-tweet?
-        // yes
-        if (![[dictionary allKeys] containsObject:@"retweeted_status"]) {
-            // contains key so change tweet to original tweet
-            NSDictionary *originalTweet = dictionary[@"retweeted_status"];
-        }
-        else {
-            NSDictionary *originalTweet = dictionary;
-            NSDictionary *userDictionary = dictionary[@"user"];
-            self.retweetedByUser = [[User alloc] initWithDictionary:userDictionary];
-            
-            // no so stays the same
-            dictionary = originalTweet;
-        }
-        */
         self.idStr = dictionary[@"id_str"];
         self.text = dictionary[@"text"];
         self.favoriteCount = [dictionary[@"favorite_count"] intValue];
