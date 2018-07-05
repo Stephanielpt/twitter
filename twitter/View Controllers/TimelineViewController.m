@@ -69,9 +69,9 @@
 }
 
 
-//- (void)didRetweet:(Tweet *)tweet {
-//    [self.tableView reloadData];
-//}
+- (void)didRetweet:(Tweet *)tweet {
+    [self.tableView reloadData];
+}
 
 
 - (void)didLike:(Tweet *)tweet {

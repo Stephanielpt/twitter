@@ -12,7 +12,7 @@
 @protocol TweetCellDelegate
 
 - (void)didLike:(Tweet *)tweet;
-//- (void)didRetweet:(Tweet *)tweet;
+- (void)didRetweet:(Tweet *)tweet;
 
 @end
 
