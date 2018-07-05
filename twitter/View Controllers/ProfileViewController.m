@@ -12,6 +12,11 @@
 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profilePic;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bioLabel;
+@property (weak, nonatomic) IBOutlet UILabel *followingCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *followerCountLabel;
 
 @end
 
@@ -20,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.profilePic.layer.cornerRadius = 30;
+    self.profilePic.layer.cornerRadius = 65;
     self.profilePic.layer.borderWidth = 3.0;
     self.profilePic.layer.borderColor = [UIColor whiteColor].CGColor;
 }
