@@ -148,6 +148,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="notRetweeted"/>
                                                     <state key="selected" image="retweeted"/>
+                                                    <connections>
+                                                        <action selector="didTapRetweet:" destination="4dH-Dw-NO4" eventType="touchUpInside" id="flN-qY-FZ0"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyo-vd-49E">
                                                     <rect key="frame" x="103" y="123" width="32" height="18"/>
@@ -174,9 +177,11 @@
                                         <connections>
                                             <outlet property="commentLabel" destination="tyo-vd-49E" id="64L-fe-vm8"/>
                                             <outlet property="createdAtString" destination="Uw1-cM-G4N" id="p27-kf-1qw"/>
+                                            <outlet property="favoriteButton" destination="33O-di-9af" id="J47-Un-gjM"/>
                                             <outlet property="favoriteLabel" destination="00F-h3-WYS" id="dxB-jJ-hGQ"/>
                                             <outlet property="name" destination="bKh-LV-6i8" id="Yvr-8g-DYf"/>
                                             <outlet property="profilePic" destination="UKp-21-iI1" id="exY-jR-WcS"/>
+                                            <outlet property="retweetButton" destination="oWx-oZ-Pc1" id="dJf-j8-gh5"/>
                                             <outlet property="retweetLabel" destination="peo-z9-0jK" id="TkY-Ah-OcH"/>
                                             <outlet property="screenName" destination="7hq-Fl-43T" id="f8o-zW-PMH"/>
                                             <outlet property="tweetText" destination="J3K-MY-HcT" id="ix9-b1-TMW"/>

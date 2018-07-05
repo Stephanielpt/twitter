@@ -61,17 +61,33 @@
 }
 
 - (void)didTweet:(Tweet *)tweet {
-    NSLog(@"hitt");
     [self.tweets insertObject:tweet atIndex:0];
     //[self.tweets addObject:tweet];
     NSLog(@"%@", _tweets);
-//    NSLog(@"%lu", (unsigned long)_tweets.count);
-//    - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//        return self.tweets.count;
-//    }
     [self.tableView reloadData];
     [self dismissViewControllerAnimated:true completion:nil];
 }
+
+
+//- (void)didRetweet:(Tweet *)tweet {
+//    [self.tableView reloadData];
+//}
+
+
+- (void)didLike:(Tweet *)tweet {
+    //update tweets so that the right tweet in tweets
+    //has an updated fvoited count and bool
+//    for(Tweet *aTweet in self.tweets)
+//    {
+//        if(aTweet.idStr == tweet.idStr)
+//        {
+//            aTweet.favorited = tweet.favorited;
+//            aTweet.favoriteCount = tweet.favoriteCount;
+//        }
+//    }
+    [self.tableView reloadData];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -99,7 +115,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
-    
+    cell.delegate = self;
     //cell = movies[indexpath.row];
     Tweet * tweet = self.tweets[indexPath.row];
     [cell setTweet:tweet];

@@ -9,8 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "Tweet.h"
 
+@protocol TweetCellDelegate
+
+- (void)didLike:(Tweet *)tweet;
+//- (void)didRetweet:(Tweet *)tweet;
+
+@end
+
 @interface TweetCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIButton *retweetButton;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
+@property (nonatomic, weak) id <TweetCellDelegate> delegate;
 @property (strong, nonatomic) User *user; // Contains name, screenname, etc. of tweet author
 
 //user
@@ -18,9 +28,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *screenName;
 //other info
-@property (weak, nonatomic) IBOutlet UIImageView *commentImage;
-@property (weak, nonatomic) IBOutlet UIImageView *retweetImage;
-@property (weak, nonatomic) IBOutlet UIImageView *favoriteImage;
+//@property (weak, nonatomic) IBOutlet UIImageView *commentImage;
+//@property (weak, nonatomic) IBOutlet UIImageView *retweetImage;
+//@property (weak, nonatomic) IBOutlet UIImageView *favoriteImage;
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *retweetLabel;
 @property (weak, nonatomic) IBOutlet UILabel *favoriteLabel;
