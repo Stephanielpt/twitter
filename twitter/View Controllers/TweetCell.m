@@ -38,7 +38,7 @@
     }
     // TODO: Update cell UI
     self.retweetButton.selected = self.tweet.retweeted;
-    [self.delegate didRetweet:self.tweet];
+    //[self.delegate didRetweet:self.tweet];
     // TODO: Send a POST request to the POST retweeted/create endpoint
     if(self.tweet.retweeted)
     {
@@ -76,7 +76,7 @@
     // TODO: Update cell UI
     self.favoriteButton.selected = self.tweet.favorited;
     // refreshCell()
-    [self.delegate didLike:self.tweet];
+    //[self.delegate didLike:self.tweet];
     // TODO: Send a POST request to the POST favorites/create endpoint
     if(self.tweet.favorited)
     {

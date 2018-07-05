@@ -56,7 +56,7 @@
             NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
         }
         [self.tableView reloadData];
-        self.tableView.rowHeight = 200;
+//        self.tableView.rowHeight = 200;
     }];
     // Tell the refreshControl to stop spinning
     [refreshControl endRefreshing];
@@ -71,24 +71,24 @@
 }
 
 
-- (void)didRetweet:(Tweet *)tweet {
-    [self.tableView reloadData];
-}
-
-
-- (void)didLike:(Tweet *)tweet {
-    //update tweets so that the right tweet in tweets
-    //has an updated fvoited count and bool
-//    for(Tweet *aTweet in self.tweets)
-//    {
-//        if(aTweet.idStr == tweet.idStr)
-//        {
-//            aTweet.favorited = tweet.favorited;
-//            aTweet.favoriteCount = tweet.favoriteCount;
-//        }
-//    }
-    [self.tableView reloadData];
-}
+//- (void)didRetweet:(Tweet *)tweet {
+//    [self.tableView reloadData];
+//}
+//
+//
+//- (void)didLike:(Tweet *)tweet {
+//    //update tweets so that the right tweet in tweets
+//    //has an updated fvoited count and bool
+////    for(Tweet *aTweet in self.tweets)
+////    {
+////        if(aTweet.idStr == tweet.idStr)
+////        {
+////            aTweet.favorited = tweet.favorited;
+////            aTweet.favoriteCount = tweet.favoriteCount;
+////        }
+////    }
+//    [self.tableView reloadData];
+//}
 
 - (IBAction)onTapLogout:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
@@ -125,7 +125,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
-    cell.delegate = self;
+    //cell.delegate = self;
     //cell = movies[indexpath.row];
     Tweet * tweet = self.tweets[indexPath.row];
     [cell setTweet:tweet];
