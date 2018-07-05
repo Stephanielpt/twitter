@@ -12,6 +12,7 @@
 #import "ComposeViewController.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "DetailTweetView.h"
 
 @interface TimelineViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -109,9 +110,27 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    UINavigationController *navigationController = [segue destinationViewController];
-    ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
-    composeController.delegate = self;
+    if([segue.identifier isEqualToString:(@"composeTweet")])
+    {
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+        composeController.delegate = self;
+    }
+    if([segue.identifier isEqualToString:(@"detailTweet")])
+    {
+        DetailTweetView *detailTweetView = [segue destinationViewController];
+//        @property (strong, nonatomic) Tweet *tweet;
+//        @property (strong, nonatomic) NSString *tweetText;
+//        @property (strong, nonatomic) User *user;
+//        @property (strong, nonatomic) NSString *dateString;
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Tweet *tweet = self.tweets[indexPath.row];
+        detailTweetView.tweet = tweet;
+        detailTweetView.tweet.user = tweet.user;
+        detailTweetView.tweet.text = tweet.text;
+        detailTweetView.tweet.createdAtString = tweet.createdAtString;
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
