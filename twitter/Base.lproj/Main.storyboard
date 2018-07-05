@@ -194,7 +194,11 @@
                         <viewLayoutGuide key="safeArea" id="ugE-Ul-H9I"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home Timeline" id="MOc-fV-EZE">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="esd-rr-w1l"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="esd-rr-w1l">
+                            <connections>
+                                <action selector="onTapLogout:" destination="Lbl-k5-U4i" id="suB-m4-mpt"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="edit-icon" id="mYj-G1-6DA">
                             <connections>
                                 <segue destination="RBV-qO-o0i" kind="presentation" id="MVy-hZ-dzF"/>
