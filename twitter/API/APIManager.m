@@ -123,7 +123,27 @@ static NSString * const consumerSecret = @"axTkGtAuyDjoVnE4DxLVgyKdMnPuvauqt7daJ
     }
       failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
           //failure
-          NSMutableArray *tweetDictionaries = nil;
+          //NSMutableArray *tweetDictionaries = nil;
+          completion(nil, error);
+      }];
+}
+
+- (void)getUserTweets:(void(^)(NSMutableArray *tweets, NSError *error))completion {
+    NSString *base = @"1.1/statuses/user_timeline.json?screen_name=slampotang";
+//    base = [base stringByAppendingString:user.screenName];
+    base = [base stringByAppendingString:@"&count=20"];
+    [self GET:base parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable dictionary) {
+        //success
+        // turn dictionary into the array of tweets
+//        NSMutableArray *theTweets = [[NSMutableArray alloc] initWithDictionary:theuser];
+        //completion(theTweets, nil);
+//        NSMutableArray * tweets = [Tweet tweetsWithArray:tweetDictionaries];
+//        completion(tweets, nil);
+        NSMutableArray *theTweets = [Tweet tweetsWithArray:(NSDictionary*)dictionary];
+        completion(theTweets, nil);
+    }
+      failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+          //failure
           completion(nil, error);
       }];
 }

@@ -11,8 +11,10 @@
 #import <QuartzCore/QuartzCore.h>
 #import "User.h"
 #import "APIManager.h"
+#import "TweetCell.h"
+#import "myTweetCell.h"
 
-@interface ProfileViewController ()
+@interface ProfileViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *profilePic;
 @property (weak, nonatomic) IBOutlet UIImageView *bannerPic;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -22,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *followerCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tweetCountLabel;
 @property (strong, nonatomic) User *user;
+@property (strong, nonatomic) NSMutableArray *myTweets;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -29,6 +33,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     // Do any additional setup after loading the view.
     self.profilePic.layer.cornerRadius = 65;
     self.profilePic.layer.borderWidth = 3.0;
@@ -52,6 +58,16 @@
         self.followingCountLabel.text = [NSString stringWithFormat:@"%@", self.user.followingCount];
         self.tweetCountLabel.text = [NSString stringWithFormat:@"%@", self.user.tweetCount];
     }];
+    
+    [[APIManager shared] getUserTweets:^(NSMutableArray *tweets, NSError *error) {
+        if (tweets) {
+            self.myTweets = tweets;
+            NSLog(@"😎😎😎 Successfully grabbed users tweets");
+        } else {
+            NSLog(@"😫😫😫 Error grabbing users tweets: %@", error.localizedDescription);
+        }
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,5 +84,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myTweetCell"];
+    //cell.delegate = self;
+    //cell = movies[indexpath.row];
+    Tweet * tweet = self.myTweets[indexPath.row];
+    [cell setTweet:tweet];
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.myTweets.count;
+}
 
 @end
