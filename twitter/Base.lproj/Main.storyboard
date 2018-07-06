@@ -455,44 +455,44 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="klnchcgefvhkldjjrdthcinjtckkinvl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9G2-XF-Nku">
-                                <rect key="frame" x="16" y="293" width="343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="klnchcgefvhkldjjrdthcinjtckkinvl" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9G2-XF-Nku">
+                                <rect key="frame" x="16" y="295.5" width="344" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hm-Ki-hec">
-                                <rect key="frame" x="16" y="325.5" width="10" height="18"/>
+                                <rect key="frame" x="16" y="325" width="10" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75S-vP-byO">
-                                <rect key="frame" x="29" y="325.5" width="65" height="18"/>
+                                <rect key="frame" x="29" y="325" width="65" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLd-QM-hye">
-                                <rect key="frame" x="144" y="325.5" width="10" height="18"/>
+                                <rect key="frame" x="144" y="325" width="10" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i04-gA-jKH">
-                                <rect key="frame" x="157" y="325.5" width="65" height="18"/>
+                                <rect key="frame" x="157" y="325" width="65" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MfR-8a-Y0i">
-                                <rect key="frame" x="272" y="325.5" width="10" height="18"/>
+                                <rect key="frame" x="272" y="325" width="10" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0l-Vb-oA5">
-                                <rect key="frame" x="285" y="325.5" width="49" height="18"/>
+                                <rect key="frame" x="285" y="325" width="49" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -512,6 +512,7 @@
                             <constraint firstItem="75S-vP-byO" firstAttribute="leading" secondItem="1hm-Ki-hec" secondAttribute="trailing" constant="3" id="hn0-HA-u1W"/>
                             <constraint firstItem="NEt-J2-3ww" firstAttribute="top" secondItem="tv9-Jm-gR2" secondAttribute="top" constant="65" id="hvM-dX-N5H"/>
                             <constraint firstItem="dLd-QM-hye" firstAttribute="top" secondItem="1hm-Ki-hec" secondAttribute="top" id="ilm-dy-jy0"/>
+                            <constraint firstItem="tv9-Jm-gR2" firstAttribute="trailing" secondItem="9G2-XF-Nku" secondAttribute="trailing" constant="15" id="kQ7-D0-okv"/>
                             <constraint firstItem="1hm-Ki-hec" firstAttribute="top" secondItem="9G2-XF-Nku" secondAttribute="bottom" constant="12" id="mTG-HX-tSf"/>
                             <constraint firstItem="l0l-Vb-oA5" firstAttribute="leading" secondItem="MfR-8a-Y0i" secondAttribute="trailing" constant="3" id="mmK-dx-5rv"/>
                             <constraint firstItem="1hm-Ki-hec" firstAttribute="leading" secondItem="NEt-J2-3ww" secondAttribute="leading" id="p4g-xa-WCX"/>
@@ -525,6 +526,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile-Icon" id="Xne-Fj-rtR"/>
                     <connections>
+                        <outlet property="bannerPic" destination="1Zo-TW-XC5" id="Sby-dk-bFP"/>
                         <outlet property="bioLabel" destination="9G2-XF-Nku" id="tkU-xZ-yFp"/>
                         <outlet property="followerCountLabel" destination="dLd-QM-hye" id="JYB-8Z-Mvs"/>
                         <outlet property="followingCountLabel" destination="1hm-Ki-hec" id="ond-KR-OYi"/>

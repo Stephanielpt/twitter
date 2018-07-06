@@ -14,6 +14,7 @@
 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profilePic;
+@property (weak, nonatomic) IBOutlet UIImageView *bannerPic;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bioLabel;
@@ -43,6 +44,7 @@
         }
         //        [self.tableView reloadData];
         [self.profilePic setImageWithURL:self.user.profilePic];
+        [self.bannerPic setImageWithURL:self.user.bannerPic];
         self.nameLabel.text = self.user.name;
         self.usernameLabel.text = [@"@" stringByAppendingString: self.user.screenName ];
         self.bioLabel.text = self.user.bio;
