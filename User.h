@@ -14,7 +14,10 @@
 @property (strong, nonatomic) NSString *screenName;
 @property (strong, nonatomic) NSURL *profilePic;
 @property (strong, nonatomic) NSURL *bannerPic;
-
+@property (strong, nonatomic) NSString *bio;
+@property (strong, nonatomic) NSNumber *followerCount;
+@property (strong, nonatomic) NSNumber *followingCount;
+@property (strong, nonatomic) NSNumber *tweetCount;
 // Create initializer
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

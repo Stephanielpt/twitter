@@ -18,6 +18,10 @@
         self.profilePic = [NSURL URLWithString:dictionary[@"profile_image_url_https"]];
         self.bannerPic = [NSURL URLWithString:dictionary[@"profile_banner_url"]];
         // Initialize any other properties
+        self.bio = dictionary[@"description"];
+        self.followerCount = dictionary[@"followers_count"];
+        self.tweetCount = dictionary[@"statuses_count"];
+        self.followingCount = dictionary[@"friends_count"];
     }
     return self;
 }

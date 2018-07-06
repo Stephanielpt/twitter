@@ -8,6 +8,7 @@
 
 #import "APIManager.h"
 #import "Tweet.h"
+#import "User.h"
 
 static NSString * const baseURLString = @"https://api.twitter.com";
 static NSString * const consumerKey = @"U809QqUfHK8skbvy9vz6ECJ60"; // Enter your consumer key here
@@ -92,6 +93,39 @@ static NSString * const consumerSecret = @"axTkGtAuyDjoVnE4DxLVgyKdMnPuvauqt7daJ
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         completion(nil, error);
     }];
+}
+
+- (void)getUserInfo:(void(^)(User *user, NSError *error))completion {
+    
+    [self GET:@"1.1/account/verify_credentials.json" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable theuser) {
+        
+        //NSDictionary *userInfo = theuser;
+//        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:theuser];
+        //[[NSUserDefaults standardUserDefaults] setValue:data forKey:@"hometimeline_tweets"];
+        
+        //function to turn a dictionary into a user...
+            // in user.m
+        
+//        User *myUser;
+//        myUser.bio = theuser[@"description"];
+//        myUser.followerCount = theuser[@"followers_count"];
+//        myUser.tweetCount = theuser[@"statuses_count"];
+//        myUser.name = theuser[@"name"];
+//        myUser.screenName = theuser[@"screen_name"];
+//        myUser.profilePic = theuser[@"profile_image_url_https"];
+//        myUser.bannerPic = theuser[@"profile_background_image_url_https"];
+//        myUser.followingCount = theuser[@"friends_count"];
+        
+        //success
+        User *myUser = [[User alloc] initWithDictionary:theuser];
+        completion(myUser, nil);
+
+    }
+      failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+          //failure
+          NSMutableArray *tweetDictionaries = nil;
+          completion(nil, error);
+      }];
 }
 
 - (void)retweet:(Tweet *)tweet completion:(void (^)(Tweet *, NSError *))completion{

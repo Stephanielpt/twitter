@@ -9,6 +9,8 @@
 #import "ProfileViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import <QuartzCore/QuartzCore.h>
+#import "User.h"
+#import "APIManager.h"
 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profilePic;
@@ -17,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *bioLabel;
 @property (weak, nonatomic) IBOutlet UILabel *followingCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *followerCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tweetCountLabel;
+@property (strong, nonatomic) User *user;
 
 @end
 
@@ -28,6 +32,24 @@
     self.profilePic.layer.cornerRadius = 65;
     self.profilePic.layer.borderWidth = 3.0;
     self.profilePic.layer.borderColor = [UIColor whiteColor].CGColor;
+    
+    // filling in specific data
+    [[APIManager shared] getUserInfo:^(User *user, NSError *error) {
+        if (user) {
+            self.user = user;
+            NSLog(@"😎😎😎 Successfully grabbed user data");
+        } else {
+            NSLog(@"😫😫😫 Error grabbing user data: %@", error.localizedDescription);
+        }
+//        [self.tableView reloadData];
+        [self.profilePic setImageWithURL:self.user.profilePic];
+        self.nameLabel.text = self.user.name;
+        self.usernameLabel.text = [@"@" stringByAppendingString: self.user.screenName ];
+        self.bioLabel.text = self.user.bio;
+        self.followerCountLabel.text = [NSString stringWithFormat:@"%@", self.user.followerCount];
+        self.followingCountLabel.text = [NSString stringWithFormat:@"%@", self.user.followingCount];
+        self.tweetCountLabel.text = [NSString stringWithFormat:@"%@", self.user.tweetCount];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
