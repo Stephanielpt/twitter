@@ -71,6 +71,11 @@
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
+- (void)changedInDetailView:(Tweet *)tweet {
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [self makeCallToAPI:refreshControl];    
+    [self.tableView reloadData];
+}
 
 //- (void)didRetweet:(Tweet *)tweet {
 //    [self.tableView reloadData];
@@ -130,6 +135,7 @@
         detailTweetView.tweet.user = tweet.user;
         detailTweetView.tweet.text = tweet.text;
         detailTweetView.tweet.createdAtString = tweet.createdAtString;
+        detailTweetView.delegate = self;
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

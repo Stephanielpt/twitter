@@ -92,7 +92,9 @@
                 NSLog(@"Successfully retweeted the following Tweet: %@", tweet.text);
             }
         }];
-    }}
+    }
+    [self.delegate changedInDetailView:self.tweet];
+}
 
 - (IBAction)onTapFavorite:(id)sender {
     // TODO: Update the local tweet model
@@ -131,6 +133,7 @@
             }
         }];
     }
+    [self.delegate changedInDetailView:self.tweet];
 }
 
 - (void)didReceiveMemoryWarning {

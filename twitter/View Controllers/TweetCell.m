@@ -38,6 +38,7 @@
     }
     // TODO: Update cell UI
     self.retweetButton.selected = self.tweet.retweeted;
+    self.retweetLabel.text = [NSString stringWithFormat:@"%d", self.tweet.retweetCount];
     //[self.delegate didRetweet:self.tweet];
     // TODO: Send a POST request to the POST retweeted/create endpoint
     if(self.tweet.retweeted)
@@ -75,6 +76,7 @@
     }
     // TODO: Update cell UI
     self.favoriteButton.selected = self.tweet.favorited;
+    self.favoriteLabel.text = [NSString stringWithFormat:@"%d", self.tweet.favoriteCount];
     // refreshCell()
     //[self.delegate didLike:self.tweet];
     // TODO: Send a POST request to the POST favorites/create endpoint

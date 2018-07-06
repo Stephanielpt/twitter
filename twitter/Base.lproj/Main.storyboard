@@ -513,7 +513,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tv9-Jm-gR2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="Xne-Fj-rtR"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile-Icon" id="Xne-Fj-rtR"/>
                     <connections>
                         <outlet property="bioLabel" destination="9G2-XF-Nku" id="tkU-xZ-yFp"/>
                         <outlet property="followerCountLabel" destination="dLd-QM-hye" id="JYB-8Z-Mvs"/>
@@ -531,7 +531,7 @@
         <scene sceneID="WUT-Ke-VeR">
             <objects>
                 <navigationController storyboardIdentifier="TweetsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="FTQ-G1-N2b" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="cHC-cm-dmf"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="home-icon" id="cHC-cm-dmf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ytz-Ev-cUB">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -628,8 +628,10 @@
         <image name="commentImage" width="30" height="30"/>
         <image name="edit-icon" width="30" height="27"/>
         <image name="favorited" width="30" height="30"/>
+        <image name="home-icon" width="30" height="30"/>
         <image name="notFavorited" width="30" height="30"/>
         <image name="notRetweeted" width="30" height="30"/>
+        <image name="profile-Icon" width="26" height="26"/>
         <image name="retweeted" width="30" height="30"/>
     </resources>
 </document>
