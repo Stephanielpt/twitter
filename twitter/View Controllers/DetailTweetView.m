@@ -13,6 +13,7 @@
 
 @interface DetailTweetView ()
 @property (weak, nonatomic) IBOutlet UIImageView *profilePic;
+@property (weak, nonatomic) IBOutlet UIImageView *bannerPic;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tweetText;
@@ -33,6 +34,9 @@
     // Do any additional setup after loading the view.
     self.profilePic.layer.cornerRadius = 36;
     [self.profilePic setImageWithURL:self.tweet.user.profilePic];
+    self.profilePic.layer.borderWidth = 2.0;
+    self.profilePic.layer.borderColor = [UIColor whiteColor].CGColor;
+    [self.bannerPic setImageWithURL:self.tweet.user.bannerPic];
     self.nameLabel.text = self.tweet.user.name;
     self.usernameLabel.text = [@"@" stringByAppendingString:self.tweet.user.screenName];
     self.tweetText.text = self.tweet.text;

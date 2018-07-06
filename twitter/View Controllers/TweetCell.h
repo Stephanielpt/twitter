@@ -25,12 +25,11 @@
 
 //user
 @property (weak, nonatomic) IBOutlet UIImageView *profilePic;
+@property (weak, nonatomic) IBOutlet UIImageView *bannerPic;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *screenName;
 //other info
-//@property (weak, nonatomic) IBOutlet UIImageView *commentImage;
-//@property (weak, nonatomic) IBOutlet UIImageView *retweetImage;
-//@property (weak, nonatomic) IBOutlet UIImageView *favoriteImage;
+
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *retweetLabel;
 @property (weak, nonatomic) IBOutlet UILabel *favoriteLabel;

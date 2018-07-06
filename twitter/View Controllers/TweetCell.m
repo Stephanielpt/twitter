@@ -55,10 +55,10 @@
     else {
         [[APIManager shared] unretweet:self.tweet completion:^(Tweet *tweet, NSError *error) {
             if(error){
-                NSLog(@"Error retweeting tweet: %@", error.localizedDescription);
+                NSLog(@"Error unretweeting tweet: %@", error.localizedDescription);
             }
             else{
-                NSLog(@"Successfully retweeted the following Tweet: %@", tweet.text);
+                NSLog(@"Successfully unretweeted the following Tweet: %@", tweet.text);
             }
         }];
     }
@@ -94,10 +94,10 @@
     else {
         [[APIManager shared] unfavorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
             if(error){
-                NSLog(@"Error favoriting tweet: %@", error.localizedDescription);
+                NSLog(@"Error unfavoriting tweet: %@", error.localizedDescription);
             }
             else{
-                NSLog(@"Successfully favorited the following Tweet: %@", tweet.text);
+                NSLog(@"Successfully unfavorited the following Tweet: %@", tweet.text);
             }
         }];
     }
@@ -114,6 +114,8 @@
     self.name.text = tweet.user.name;
     self.favoriteLabel.text = [NSString stringWithFormat:@"%d", tweet.favoriteCount];
     [self.profilePic setImageWithURL: self.tweet.user.profilePic];
+    //[self.profilePic setImageWithURL: self.tweet.user.bannerPic];
+    [self.bannerPic setImageWithURL: self.tweet.user.bannerPic];
     self.profilePic.layer.cornerRadius = 27;
     self.favoriteButton.selected = self.tweet.favorited;
     self.retweetButton.selected = self.tweet.retweeted;
