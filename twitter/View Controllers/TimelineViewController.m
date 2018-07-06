@@ -14,8 +14,9 @@
 #import "LoginViewController.h"
 #import "DetailTweetView.h"
 
-@interface TimelineViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface TimelineViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
+@property (assign, nonatomic) BOOL isMoreDataLoading;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *tweets;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *logoutButton;
@@ -111,6 +112,43 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if(!self.isMoreDataLoading){
+        // Calculate the position of one screen length before the bottom of the results
+        int scrollViewContentHeight = self.tableView.contentSize.height;
+        int scrollOffsetThreshold = scrollViewContentHeight - self.tableView.bounds.size.height;
+        
+        // When the user has scrolled past the threshold, start requesting
+        if(scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
+            self.isMoreDataLoading = true;
+            
+            // ... Code to load more results ...
+            UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+            [refreshControl addTarget:self action:@selector(makeCallToAPI:) forControlEvents:UIControlEventValueChanged];
+            [self.tableView insertSubview:refreshControl atIndex:0];
+            
+            [self makeNewCallToAPI:refreshControl];
+        }
+    }
+}
+
+- (void)makeNewCallToAPI:(UIRefreshControl *)refreshControl {
+    [[APIManager shared] getMoreTweets:(self.tweets[19]) completion:^(NSMutableArray *tweets, NSError *error) {
+        if (tweets) {
+            self.tweets = tweets;
+            NSLog(@"😎😎😎 Successfully loaded more tweets");
+            for (Tweet *tweet in tweets) {
+                NSString *text = tweet.text;
+                NSLog(@"%@", text);
+            }
+        } else {
+            NSLog(@"😫😫😫 Error getting more tweets: %@", error.localizedDescription);
+        }
+        [self.tableView reloadData];
+    }];
+    // Tell the refreshControl to stop spinning
+    [refreshControl endRefreshing];
+}
 
 #pragma mark - Navigation
 

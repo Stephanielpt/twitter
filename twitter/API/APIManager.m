@@ -82,6 +82,25 @@ static NSString * const consumerSecret = @"axTkGtAuyDjoVnE4DxLVgyKdMnPuvauqt7daJ
           completion(nil, error);
       }];
 }
+
+- (void)getMoreTweets:(Tweet *)lastTweet completion:(void(^)(NSMutableArray *tweets, NSError *error))completion {
+    [self GET:@"1.1/statuses/home_timeline.json" parameters:@{@"count": @"200", @"max_id": lastTweet.idStr} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSMutableArray *  _Nullable tweetDictionaries) {
+        //success
+        NSMutableArray * tweets = [Tweet tweetsWithArray:tweetDictionaries];
+        completion(tweets, nil);
+    }
+      failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+          //failure
+          NSMutableArray *tweetDictionaries = nil;
+          completion(nil, error);
+          NSData *data = [[NSUserDefaults standardUserDefaults] valueForKey:@"hometimeline_tweets"];
+          if(data != nil)
+          {
+              tweetDictionaries = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+          }
+          completion(nil, error);
+      }];
+}
      
 - (void)postStatusWithText:(NSString *)text completion:(void (^)(Tweet *, NSError *))completion{
     NSString *urlString = @"1.1/statuses/update.json";
