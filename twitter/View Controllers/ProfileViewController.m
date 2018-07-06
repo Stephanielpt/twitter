@@ -41,7 +41,7 @@
         } else {
             NSLog(@"😫😫😫 Error grabbing user data: %@", error.localizedDescription);
         }
-//        [self.tableView reloadData];
+        //        [self.tableView reloadData];
         [self.profilePic setImageWithURL:self.user.profilePic];
         self.nameLabel.text = self.user.name;
         self.usernameLabel.text = [@"@" stringByAppendingString: self.user.screenName ];
