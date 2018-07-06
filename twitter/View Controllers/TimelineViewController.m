@@ -75,6 +75,7 @@
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [self makeCallToAPI:refreshControl];    
     [self.tableView reloadData];
+    NSLog(@"reloaded the tableview");
 }
 
 //- (void)didRetweet:(Tweet *)tweet {
@@ -124,10 +125,7 @@
     if([segue.identifier isEqualToString:(@"detailTweet")])
     {
         DetailTweetView *detailTweetView = [segue destinationViewController];
-//        @property (strong, nonatomic) Tweet *tweet;
-//        @property (strong, nonatomic) NSString *tweetText;
-//        @property (strong, nonatomic) User *user;
-//        @property (strong, nonatomic) NSString *dateString;
+
         UITableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
         Tweet *tweet = self.tweets[indexPath.row];
@@ -136,6 +134,7 @@
         detailTweetView.tweet.text = tweet.text;
         detailTweetView.tweet.createdAtString = tweet.createdAtString;
         detailTweetView.delegate = self;
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

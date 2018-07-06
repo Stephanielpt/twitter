@@ -8,7 +8,7 @@
 #import "ComposeViewController.h"
 #import "APIManager.h"
 
-@interface ComposeViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface ComposeViewController () <ComposeViewControllerDelegate, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *tweetTextView;
 
 @end
@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tweetTextView.delegate = self;
 }
 
 - (IBAction)onTapClose:(id)sender {

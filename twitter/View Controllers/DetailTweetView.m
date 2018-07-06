@@ -134,6 +134,8 @@
         }];
     }
     [self.delegate changedInDetailView:self.tweet];
+    NSLog(@"this is a tweet trying to be unfaved or faved");
+    NSLog(@"%@", self.tweet);
 }
 
 - (void)didReceiveMemoryWarning {
