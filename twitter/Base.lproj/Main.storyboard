@@ -757,37 +757,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lno-Vr-94j">
-                                <rect key="frame" x="15" y="74" width="345" height="180"/>
+                                <rect key="frame" x="80" y="74" width="280" height="180"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="es9-y6-un8"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="GtG-Ge-2Cm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhW-jt-nie">
+                                <rect key="frame" x="147.5" y="264" width="28.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Characters left: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNX-AI-v39">
                                 <rect key="frame" x="15" y="264" width="122.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhW-jt-nie">
-                                <rect key="frame" x="145" y="264" width="28.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TtH-3p-NIy">
+                                <rect key="frame" x="15" y="74" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="FUN-eP-oWP"/>
+                                    <constraint firstAttribute="width" constant="50" id="hD1-vK-SZo"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Jz7-aH-eks" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HhW-jt-nie" secondAttribute="trailing" constant="15" id="7WK-uz-v54"/>
-                            <constraint firstItem="kNX-AI-v39" firstAttribute="leading" secondItem="Lno-Vr-94j" secondAttribute="leading" id="Erf-bE-FpQ"/>
-                            <constraint firstItem="kNX-AI-v39" firstAttribute="top" secondItem="Lno-Vr-94j" secondAttribute="bottom" constant="10" id="GY4-Ca-m40"/>
-                            <constraint firstItem="Lno-Vr-94j" firstAttribute="leading" secondItem="Jz7-aH-eks" secondAttribute="leading" constant="15" id="R2a-gA-E17"/>
-                            <constraint firstItem="Jz7-aH-eks" firstAttribute="trailing" secondItem="Lno-Vr-94j" secondAttribute="trailing" constant="15" id="Xgc-Xu-66H"/>
-                            <constraint firstItem="HhW-jt-nie" firstAttribute="leading" secondItem="kNX-AI-v39" secondAttribute="trailing" constant="8" id="dBy-2c-X4y"/>
-                            <constraint firstItem="HhW-jt-nie" firstAttribute="top" secondItem="kNX-AI-v39" secondAttribute="top" id="lNp-Rm-KH9"/>
-                            <constraint firstItem="Lno-Vr-94j" firstAttribute="top" secondItem="Jz7-aH-eks" secondAttribute="top" constant="10" id="lxW-Bc-HgC"/>
+                            <constraint firstItem="Jz7-aH-eks" firstAttribute="trailing" secondItem="Lno-Vr-94j" secondAttribute="trailing" constant="15" id="0DO-4z-a01"/>
+                            <constraint firstItem="HhW-jt-nie" firstAttribute="leading" secondItem="kNX-AI-v39" secondAttribute="trailing" constant="10" id="EQA-is-zug"/>
+                            <constraint firstItem="kNX-AI-v39" firstAttribute="top" secondItem="Lno-Vr-94j" secondAttribute="bottom" constant="10" id="Z2i-bR-ThC"/>
+                            <constraint firstItem="Lno-Vr-94j" firstAttribute="top" secondItem="Jz7-aH-eks" secondAttribute="top" constant="10" id="aB0-O9-aYw"/>
+                            <constraint firstItem="TtH-3p-NIy" firstAttribute="top" secondItem="Jz7-aH-eks" secondAttribute="top" constant="10" id="aYM-BB-Rc2"/>
+                            <constraint firstItem="Jz7-aH-eks" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HhW-jt-nie" secondAttribute="trailing" constant="15" id="eAM-ht-9la"/>
+                            <constraint firstItem="HhW-jt-nie" firstAttribute="top" secondItem="kNX-AI-v39" secondAttribute="top" id="exQ-Xz-r6H"/>
+                            <constraint firstItem="Lno-Vr-94j" firstAttribute="leading" secondItem="TtH-3p-NIy" secondAttribute="trailing" constant="15" id="mpZ-s9-S2f"/>
+                            <constraint firstItem="kNX-AI-v39" firstAttribute="leading" secondItem="Jz7-aH-eks" secondAttribute="leading" constant="15" id="mx2-5c-PDJ"/>
+                            <constraint firstItem="TtH-3p-NIy" firstAttribute="leading" secondItem="Jz7-aH-eks" secondAttribute="leading" constant="15" id="v1e-1R-6Lk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jz7-aH-eks"/>
                     </view>
@@ -805,6 +814,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="characterLabel" destination="HhW-jt-nie" id="nph-fL-JBr"/>
+                        <outlet property="profilePic" destination="TtH-3p-NIy" id="wtX-a7-xDZ"/>
                         <outlet property="tweetTextView" destination="Lno-Vr-94j" id="1KK-hD-TzJ"/>
                     </connections>
                 </viewController>

@@ -7,10 +7,15 @@
 
 #import "ComposeViewController.h"
 #import "APIManager.h"
+#import "User.h"
+#import "UIImageView+AFNetworking.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ComposeViewController () <ComposeViewControllerDelegate, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *tweetTextView;
 @property (weak, nonatomic) IBOutlet UILabel *characterLabel;
+@property (strong, nonatomic) User *user;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePic;
 
 @end
 
@@ -19,8 +24,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tweetTextView.delegate = self;
-    self.tweetTextView.layer.borderColor = [UIColor grayColor].CGColor;
-    self.tweetTextView.layer.borderWidth = 2.0;
+    self.tweetTextView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.tweetTextView.layer.borderWidth = 1.0;
+    [[APIManager shared] getUserInfo:^(User *user, NSError *error) {
+        if (user) {
+            self.user = user;
+            NSLog(@"😎😎😎 Successfully grabbed user data");
+        } else {
+            NSLog(@"😫😫😫 Error grabbing user data: %@", error.localizedDescription);
+        }
+        //        [self.tableView reloadData];
+        [self.profilePic setImageWithURL:self.user.profilePic];
+        self.profilePic.layer.cornerRadius = 20;
+    }];
+    self.tweetTextView.layer.cornerRadius = 20;
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
