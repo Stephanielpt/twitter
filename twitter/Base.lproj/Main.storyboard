@@ -431,10 +431,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Zo-TW-XC5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Zo-TW-XC5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                 <color key="backgroundColor" red="0.26542358155473011" green="0.69722908360273039" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="ne6-xj-8V6"/>
+                                </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TwitterLogo" translatesAutoresizingMaskIntoConstraints="NO" id="NEt-J2-3ww">
                                 <rect key="frame" x="16" y="85" width="128" height="128"/>
@@ -672,7 +674,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1Zo-TW-XC5" firstAttribute="trailing" secondItem="tv9-Jm-gR2" secondAttribute="trailing" id="7YY-cB-s85"/>
                             <constraint firstItem="dLd-QM-hye" firstAttribute="leading" secondItem="75S-vP-byO" secondAttribute="trailing" constant="50" id="7fY-Vq-Nmp"/>
+                            <constraint firstItem="1Zo-TW-XC5" firstAttribute="top" secondItem="P88-Dg-vZf" secondAttribute="top" id="9vt-n2-G0b"/>
                             <constraint firstItem="bCX-Uf-Och" firstAttribute="top" secondItem="1hm-Ki-hec" secondAttribute="bottom" constant="20" id="Bub-oY-4Pn"/>
                             <constraint firstItem="tv9-Jm-gR2" firstAttribute="trailing" secondItem="sed-I2-Iqn" secondAttribute="trailing" id="CKG-pb-opm"/>
                             <constraint firstItem="3pr-wE-K1U" firstAttribute="top" secondItem="bCX-Uf-Och" secondAttribute="bottom" constant="3" id="Eb1-MM-EWa"/>
@@ -691,6 +695,7 @@
                             <constraint firstItem="NEt-J2-3ww" firstAttribute="top" secondItem="tv9-Jm-gR2" secondAttribute="top" constant="65" id="hvM-dX-N5H"/>
                             <constraint firstItem="dLd-QM-hye" firstAttribute="top" secondItem="1hm-Ki-hec" secondAttribute="top" id="ilm-dy-jy0"/>
                             <constraint firstItem="tv9-Jm-gR2" firstAttribute="trailing" secondItem="9G2-XF-Nku" secondAttribute="trailing" constant="15" id="kQ7-D0-okv"/>
+                            <constraint firstItem="1Zo-TW-XC5" firstAttribute="leading" secondItem="tv9-Jm-gR2" secondAttribute="leading" id="l3u-jS-dWz"/>
                             <constraint firstItem="sed-I2-Iqn" firstAttribute="bottom" secondItem="3pr-wE-K1U" secondAttribute="bottom" id="lbd-kF-8m0"/>
                             <constraint firstItem="1hm-Ki-hec" firstAttribute="top" secondItem="9G2-XF-Nku" secondAttribute="bottom" constant="12" id="mTG-HX-tSf"/>
                             <constraint firstItem="l0l-Vb-oA5" firstAttribute="leading" secondItem="MfR-8a-Y0i" secondAttribute="trailing" constant="3" id="mmK-dx-5rv"/>
@@ -758,6 +763,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhW-jt-nie">
+                                <rect key="frame" x="16" y="252" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Jz7-aH-eks"/>
@@ -775,6 +787,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="characterLabel" destination="HhW-jt-nie" id="nph-fL-JBr"/>
                         <outlet property="tweetTextView" destination="Lno-Vr-94j" id="1KK-hD-TzJ"/>
                     </connections>
                 </viewController>
