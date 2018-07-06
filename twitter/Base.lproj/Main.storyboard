@@ -748,7 +748,7 @@
             </objects>
             <point key="canvasLocation" x="870" y="55"/>
         </scene>
-        <!--Compose View Controller-->
+        <!--My Tweet-->
         <scene sceneID="KlK-rx-dYo">
             <objects>
                 <viewController id="CNx-7i-dVd" customClass="ComposeViewController" sceneMemberID="viewController">
@@ -756,25 +756,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lno-Vr-94j">
-                                <rect key="frame" x="0.0" y="64" width="375" height="180"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lno-Vr-94j">
+                                <rect key="frame" x="15" y="74" width="345" height="180"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="es9-y6-un8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhW-jt-nie">
-                                <rect key="frame" x="16" y="252" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Characters left: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNX-AI-v39">
+                                <rect key="frame" x="15" y="264" width="122.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhW-jt-nie">
+                                <rect key="frame" x="145" y="264" width="28.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jz7-aH-eks" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HhW-jt-nie" secondAttribute="trailing" constant="15" id="7WK-uz-v54"/>
+                            <constraint firstItem="kNX-AI-v39" firstAttribute="leading" secondItem="Lno-Vr-94j" secondAttribute="leading" id="Erf-bE-FpQ"/>
+                            <constraint firstItem="kNX-AI-v39" firstAttribute="top" secondItem="Lno-Vr-94j" secondAttribute="bottom" constant="10" id="GY4-Ca-m40"/>
+                            <constraint firstItem="Lno-Vr-94j" firstAttribute="leading" secondItem="Jz7-aH-eks" secondAttribute="leading" constant="15" id="R2a-gA-E17"/>
+                            <constraint firstItem="Jz7-aH-eks" firstAttribute="trailing" secondItem="Lno-Vr-94j" secondAttribute="trailing" constant="15" id="Xgc-Xu-66H"/>
+                            <constraint firstItem="HhW-jt-nie" firstAttribute="leading" secondItem="kNX-AI-v39" secondAttribute="trailing" constant="8" id="dBy-2c-X4y"/>
+                            <constraint firstItem="HhW-jt-nie" firstAttribute="top" secondItem="kNX-AI-v39" secondAttribute="top" id="lNp-Rm-KH9"/>
+                            <constraint firstItem="Lno-Vr-94j" firstAttribute="top" secondItem="Jz7-aH-eks" secondAttribute="top" constant="10" id="lxW-Bc-HgC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Jz7-aH-eks"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VTv-sM-Nr5">
+                    <navigationItem key="navigationItem" title="My Tweet" id="VTv-sM-Nr5">
                         <barButtonItem key="leftBarButtonItem" title="X" id="bCe-q0-ffd">
                             <connections>
                                 <action selector="onTapClose:" destination="CNx-7i-dVd" id="ypB-e8-hsX"/>

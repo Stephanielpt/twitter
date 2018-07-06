@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tweetTextView.delegate = self;
+    self.tweetTextView.layer.borderColor = [UIColor grayColor].CGColor;
+    self.tweetTextView.layer.borderWidth = 2.0;
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
@@ -34,8 +36,7 @@
     if(newText.length < characterLimit)
     {
         //update countdown;
-        self.characterLabel.text = [NSString stringWithFormat:@"%d", characterLimit-1];
-        characterLimit = characterLimit - 1;
+        self.characterLabel.text = [NSString stringWithFormat:@"%lu", characterLimit - newText.length];
     }
     else {
         //update @"reached maximum characters"
