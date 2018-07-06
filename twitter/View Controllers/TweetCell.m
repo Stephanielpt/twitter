@@ -116,7 +116,7 @@
     [self.profilePic setImageWithURL: self.tweet.user.profilePic];
     //[self.profilePic setImageWithURL: self.tweet.user.bannerPic];
     [self.bannerPic setImageWithURL: self.tweet.user.bannerPic];
-    self.profilePic.layer.cornerRadius = 27;
+    self.profilePic.layer.cornerRadius = 34;
     self.favoriteButton.selected = self.tweet.favorited;
     self.retweetButton.selected = self.tweet.retweeted;
     self.retweetLabel.text =[NSString stringWithFormat:@"%d", tweet.retweetCount];
