@@ -23,6 +23,7 @@
 		90D959AC20EEA0A7004678D2 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D959AB20EEA0A7004678D2 /* ProfileViewController.m */; };
 		90D959AF20EEBAA9004678D2 /* DetailTweetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D959AE20EEBAA9004678D2 /* DetailTweetView.m */; };
 		90D959B220EF4549004678D2 /* myTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D959B120EF4549004678D2 /* myTweetCell.m */; };
+		90D959B520F041AB004678D2 /* TweetProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D959B420F041AB004678D2 /* TweetProfileView.m */; };
 		90DB6BD420EC2D3600A3977A /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90DB6BD320EC2D3500A3977A /* ComposeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,8 @@
 		90D959AE20EEBAA9004678D2 /* DetailTweetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailTweetView.m; sourceTree = "<group>"; };
 		90D959B020EF4549004678D2 /* myTweetCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myTweetCell.h; sourceTree = "<group>"; };
 		90D959B120EF4549004678D2 /* myTweetCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myTweetCell.m; sourceTree = "<group>"; };
+		90D959B320F041AB004678D2 /* TweetProfileView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TweetProfileView.h; sourceTree = "<group>"; };
+		90D959B420F041AB004678D2 /* TweetProfileView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweetProfileView.m; sourceTree = "<group>"; };
 		90DB6BD220EC2D3500A3977A /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		90DB6BD320EC2D3500A3977A /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +88,8 @@
 		6AD278CC20BC4B950085BC29 = {
 			isa = PBXGroup;
 			children = (
+				90D959B320F041AB004678D2 /* TweetProfileView.h */,
+				90D959B420F041AB004678D2 /* TweetProfileView.m */,
 				90639AB520EAC47900755749 /* User.h */,
 				90639AB620EAC47900755749 /* User.m */,
 				90639AB820EAC5B200755749 /* Tweet.h */,
@@ -290,6 +295,7 @@
 			files = (
 				90639ABD20EAD52A00755749 /* TweetCell.m in Sources */,
 				90D959B220EF4549004678D2 /* myTweetCell.m in Sources */,
+				90D959B520F041AB004678D2 /* TweetProfileView.m in Sources */,
 				6AD278F320BCA6020085BC29 /* BDBOAuth1SessionManager+SFAuthenticationSession.m in Sources */,
 				90639AB720EAC47900755749 /* User.m in Sources */,
 				90DB6BD420EC2D3600A3977A /* ComposeViewController.m in Sources */,
