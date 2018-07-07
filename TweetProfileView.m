@@ -36,6 +36,9 @@
 //    @property (weak, nonatomic) IBOutlet UILabel *tweetCount;
 //    @property (weak, nonatomic) IBOutlet UILabel *followerCount;
     [self.profilePic setImageWithURL:self.user.profilePic];
+    self.profilePic.layer.cornerRadius = 65;
+    self.profilePic.layer.borderWidth = 3.0;
+    self.profilePic.layer.borderColor = [UIColor whiteColor].CGColor;
     [self.bannerPic setImageWithURL:self.user.bannerPic];
     self.nameLabel.text = self.user.name;
     self.screennameLabel.text = self.user.screenName;
