@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tweetTextView.delegate = self;
-    self.tweetTextView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    //self.tweetTextView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.tweetTextView.layer.borderWidth = 1.0;
     [[APIManager shared] getUserInfo:^(User *user, NSError *error) {
         if (user) {
@@ -35,9 +35,9 @@
         }
         //        [self.tableView reloadData];
         [self.profilePic setImageWithURL:self.user.profilePic];
-        self.profilePic.layer.cornerRadius = 20;
+        self.profilePic.layer.cornerRadius = 18;
     }];
-    self.tweetTextView.layer.cornerRadius = 20;
+    self.tweetTextView.layer.cornerRadius = 15;
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{

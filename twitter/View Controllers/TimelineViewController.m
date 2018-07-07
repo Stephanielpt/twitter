@@ -73,8 +73,18 @@
 }
 
 - (void)changedInDetailView:(Tweet *)tweet {
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    [self makeCallToAPI:refreshControl];    
+//    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+//    [self makeCallToAPI:refreshControl];
+    for(Tweet *atweet in self.tweets)
+    {
+        if(atweet.idStr == tweet.idStr)
+        {
+            atweet.retweeted = tweet.retweeted;
+            atweet.favorited = tweet.favorited;
+            atweet.retweetCount = tweet.retweetCount;
+            atweet.favoriteCount = tweet.favoriteCount;
+        }
+    }
     [self.tableView reloadData];
     NSLog(@"reloaded the tableview");
 }

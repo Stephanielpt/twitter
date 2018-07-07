@@ -757,7 +757,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lno-Vr-94j">
-                                <rect key="frame" x="80" y="74" width="280" height="180"/>
+                                <rect key="frame" x="65" y="74" width="295" height="180"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="GtG-Ge-2Cm"/>
@@ -778,10 +778,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TtH-3p-NIy">
-                                <rect key="frame" x="15" y="74" width="50" height="50"/>
+                                <rect key="frame" x="15" y="74" width="35" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="FUN-eP-oWP"/>
-                                    <constraint firstAttribute="width" constant="50" id="hD1-vK-SZo"/>
+                                    <constraint firstAttribute="height" constant="35" id="FUN-eP-oWP"/>
+                                    <constraint firstAttribute="width" constant="35" id="hD1-vK-SZo"/>
                                 </constraints>
                             </imageView>
                         </subviews>
