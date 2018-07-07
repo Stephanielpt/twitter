@@ -255,11 +255,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQh-hN-GQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="v3i-Um-9zV">
-                    <connections>
-                        <segue destination="5gU-9H-ksQ" kind="show" identifier="TweetProfile" id="Lqw-nu-cMY"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="v3i-Um-9zV"/>
             </objects>
             <point key="canvasLocation" x="1669.5999999999999" y="54.422788605697157"/>
         </scene>
@@ -385,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="911-dS-1ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2840.8000000000002" y="-128.18590704647679"/>
+            <point key="canvasLocation" x="3727" y="566"/>
         </scene>
         <!--Detail Tweet View-->
         <scene sceneID="lA6-Xl-gMO">
@@ -399,12 +395,16 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="208"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TwitterLogo" translatesAutoresizingMaskIntoConstraints="NO" id="TAI-bF-61j">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TwitterLogo" translatesAutoresizingMaskIntoConstraints="NO" id="TAI-bF-61j">
                                 <rect key="frame" x="25" y="84" width="75" height="75"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="Ctd-1n-4xD"/>
                                     <constraint firstAttribute="height" constant="75" id="QGi-jB-1P3"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="X7U-vP-wBx" appends="YES" id="vPF-yr-V3b"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stephanie Lampotang" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drf-vz-BqN">
                                 <rect key="frame" x="115" y="89" width="176" height="21"/>
@@ -553,6 +553,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qEo-8h-nFW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="X7U-vP-wBx">
+                    <connections>
+                        <segue destination="5gU-9H-ksQ" kind="show" id="hs5-c4-YV0"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2849" y="567"/>
         </scene>
@@ -980,6 +985,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QvQ-CJ-0rM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="taQ-AB-eYM">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

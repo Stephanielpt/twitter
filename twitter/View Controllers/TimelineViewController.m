@@ -185,15 +185,15 @@
         detailTweetView.delegate = self;
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
-    if([segue.identifier isEqualToString:(@"TweetProfile")])
-    {
-        TweetProfileView *tweetProfileView = [segue destinationViewController];
-        
-        TweetCell *tappedCell = sender;
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-        Tweet *tweet = self.tweets[indexPath.row];
-        tweetProfileView.user = tweet.user;
-    }
+//    if([segue.identifier isEqualToString:(@"TweetProfile")])
+//    {
+//        TweetProfileView *tweetProfileView = [segue destinationViewController];
+//        
+//        TweetCell *tappedCell = sender;
+//        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+//        Tweet *tweet = self.tweets[indexPath.row];
+//        tweetProfileView.user = tweet.user;
+//    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
