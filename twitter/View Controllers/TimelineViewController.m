@@ -144,7 +144,7 @@
 }
 
 - (void)makeNewCallToAPI:(UIRefreshControl *)refreshControl {
-    [[APIManager shared] getMoreTweets:(self.tweets[19]) completion:^(NSMutableArray *tweets, NSError *error) {
+    [[APIManager shared] getMoreTweets:(self.tweets[(self.tweets.count -1)]) completion:^(NSMutableArray *tweets, NSError *error) {
         if (tweets) {
             self.tweets = tweets;
             NSLog(@"😎😎😎 Successfully loaded more tweets");
