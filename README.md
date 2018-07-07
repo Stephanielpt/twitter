@@ -2,7 +2,7 @@
 
 **Twitter** is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 
-Time spent: **a lot of** hours spent in total
+Time spent: **25** hours spent in total
 
 ## User Stories
 
@@ -48,7 +48,7 @@ The following **additional** features are implemented:
 - [x] Updated the banner picture in the profile tab
 - [x] Made the background of a tweet the banner pic of the user who tweeted
 - [x] Placed user photo in the compose tweet view
-- [x] Added borders and layers to most images
+- [x] Added borders and layers to many images including the compose tweet text view
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
